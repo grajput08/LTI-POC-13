@@ -14,7 +14,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Connect to database
+// Test database connection at startup
+console.log("Testing database connection...");
 connectDB();
 
 // Import routes

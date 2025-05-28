@@ -1,4 +1,15 @@
 const { Sequelize } = require("sequelize");
+const dotenv = require("dotenv");
+// Load environment variables
+dotenv.config();
+
+// Debug: Log database configuration
+console.log("Database Configuration:", {
+  database: process.env.DB_NAME,
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+});
 
 const sequelize = new Sequelize(
   process.env.DB_NAME,
