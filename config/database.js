@@ -54,4 +54,14 @@ const connectDB = async () => {
   }
 };
 
-module.exports = { sequelize, connectDB };
+// Add a query wrapper for compatibility with queries.js
+const query = async (sql, params) => {
+  return sequelize.query(sql, {
+    replacements: params,
+    type: Sequelize.QueryTypes.RAW,
+    // Return raw results for compatibility
+    raw: true,
+  });
+};
+
+module.exports = { sequelize, connectDB, query };

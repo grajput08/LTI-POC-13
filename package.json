@@ -7,7 +7,8 @@
     "start": "DEBUG=provider:* node index.js",
     "dev": "DEBUG=provider:* nodemon index.js",
     "start:app": "node app.js",
-    "dev:app": "nodemon app.js"
+    "dev:app": "nodemon app.js",
+    "migrate": "node config/migration/create-tables.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
