@@ -10,7 +10,7 @@ async function submitGrade(
   score,
   userId = null,
   scoreMaximum = 100,
-  activityProgress = "Completed",
+  activityProgress = "Submitted",
   gradingProgress = "FullyGraded"
 ) {
   // Creating Grade object
@@ -188,10 +188,10 @@ router.post("/submit/audio", async (req, res) => {
       try {
         gradeSubmissionResult = await submitGrade(
           token,
-          0,
+          null,
           null,
           100,
-          "Completed",
+          "Submitted",
           "PendingManual"
         ); // Default score 100
       } catch (gradeError) {
