@@ -316,6 +316,18 @@ router.get("/submitted/audio", async (req, res) => {
           formatted: formatDuration(submission.duration),
         },
         createdAt: submission.createdat,
+        aiFeedback: [
+          "Pronunciation needs improvement",
+          "Rhythm and timing could be better",
+          "Overall performance shows good effort",
+          "Consider practicing with a metronome",
+          "Work on breath control",
+          "Try to speak more clearly and slowly",
+          "Add more expression and emotion",
+          "Practice with a mirror to improve body language",
+          "Consider joining a Toastmasters club to enhance public speaking skills",
+          "Practice with a timer to improve time management",
+        ],
       },
       context: {
         courseTitle: submission.platformcontext?.context?.title || "",
